@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Multi-Page Website</title>
+    <style>
+        /* General Styling */
+        body {
+
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(180deg, #1a1a2e, #16213e, #0f3460);
+            color: #ffffff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px #00f;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            animation: glow-logo 2s infinite alternate;
+        }
+
+        @keyframes glow-logo {
+            0% { text-shadow: 0 0 10px #00f; }
+            100% { text-shadow: 0 0 20px #fff; }
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #fff;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #00f;
+            text-shadow: 0 0 10px #00f;
+        }
+
+        .section {
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-shadow: 0 0 10px #00f;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: attr(data-description);
+            display: block;
+            font-size: 16px;
+            color: #bbb;
+            text-shadow: 0 0 10px #00f;
+            animation: glow-text 2s infinite alternate;
+        }
+
+        @keyframes glow-text {
+            0% { text-shadow: 0 0 10px #00f; }
+            100% { text-shadow: 0 0 20px #fff; }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('https://wallpaperaccess.com/full/319682.jpg') no-repeat center center/cover;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 0 0 20px #00f;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #00f, #0f0);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 0 20px #00f;
+        }
+
+        .cta-buttons a:hover {
+            box-shadow: 0 0 30px #0f0;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .service-card {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 0 20px #00f;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00f;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #00f, #0f0);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 20px #00f;
+        }
+
+        .contact-form button:hover {
+            box-shadow: 0 0 30px #0f0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #fff;
+            text-shadow: 0 0 10px #00f;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">✨ AM7</div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <h1 class="hero-title">Azama Matulezi</h1>
+        <h1 class="teks">CEO / DIREKTUR UTAMA SHELL BRUNEI</h1>
+        <div class="cta-buttons">
+
+            <a href="#about">Learn More</a>
+            <a href="#services">Our Services</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title" data-description="Story">TENTANG SAYA</h2>
+        <p class="about-content">
+            Saya adalah [azama matulezi], seorang pengusaha muda yang telah membangun karier saya dengan semangat inovasi, dedikasi tinggi, dan visi untuk menciptakan dampak positif di berbagai industri. Dalam perjalanan saya sebagai seorang pemimpin, saya telah berhasil mengelola dan mengembangkan sejumlah bisnis strategis, termasuk di sektor energi, di mana saya memimpin perusahaan tambang, minyak, batu bara, dan gas yang berfokus pada pengelolaan sumber daya alam secara berkelanjutan. Saya percaya bahwa dengan mengutamakan efisiensi, teknologi modern, dan tanggung jawab sosial, industri ini dapat memberikan manfaat maksimal bagi masyarakat dan lingkungan.
+
+Selain itu, saya juga berkiprah di industri fashion melalui brand [Azama'is], yang menggabungkan kreativitas, kualitas premium, dan tren modern untuk menghadirkan produk yang tidak hanya nyaman tetapi juga menjadi simbol kepercayaan diri. Dunia kesehatan pun menjadi perhatian saya dengan berdirinya [Azm clinic], klinik kesehatan yang menawarkan pelayanan medis komprehensif, pendekatan personal, dan teknologi terkini untuk mendukung gaya hidup sehat masyarakat urban yang semakin dinamis.
+
+Tidak berhenti di sana, saya juga mendirikan [Zeem], perusahaan konsultan bisnis yang membantu perusahaan-perusahaan dan individu menciptakan strategi unggul untuk mencapai potensi terbaik mereka. Kami bekerja dengan pendekatan kolaboratif untuk menghadirkan solusi yang berkelanjutan, baik dalam skala nasional maupun internasional. Dalam setiap langkah yang saya ambil, saya selalu berusaha untuk membangun jaringan yang kuat, memberdayakan tim yang hebat, dan menciptakan nilai yang dapat dirasakan oleh semua pemangku kepentingan.
+
+Sebagai seorang pengusaha, saya percaya bahwa kesuksesan sejati bukan hanya soal pencapaian individu, melainkan bagaimana kita dapat menjadi inspirasi dan memberikan kontribusi nyata kepada orang lain. Dengan terus berinovasi, menjunjung profesionalisme, dan memiliki visi yang kuat, saya berkomitmen untuk menjadi bagian dari perubahan positif yang membawa manfaat bagi masyarakat luas dan masa depan yang lebih baik. Mari bersama-sama menciptakan karya yang tidak hanya bermakna, tetapi juga memberi dampak jangka panjang.
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <h2 class="section-title" data-description="What We Offer">Services</h2>
+        <div class="services-list">
+            <div class="service-card">
+                <h3>Pengelolaan Sumber Daya Energi</h3>
+                <p>Eksplorasi dan pengelolaan tambang, minyak, batu bara, dan gas dengan mengutamakan keberlanjutan, efisiensi, dan tanggung jawab sosial.</p>
+            </div>
+            <div class="service-card">
+                <h3>Layanan Fashion Premium</h3>
+                <p>Produksi koleksi pakaian berkualitas tinggi yang dirancang untuk kebutuhan personal dan korporasi, dengan fokus pada tren global dan detail estetika.</p>
+            </div>
+            <div class="service-card">
+                <h3>Pelayanan Medis Komprehensif</h3>
+                <p>Klinik dengan pelayanan kesehatan umum dan spesialis, termasuk program wellness berbasis teknologi untuk mendukung gaya hidup sehat masyarakat.</p>
+            </div>
+            <div class="service-card">
+                <h3>Konsultasi Bisnis dan Manajemen</h3>
+                <p>Solusi strategis untuk pertumbuhan bisnis, ekspansi pasar, transformasi digital, hingga efisiensi operasional, didukung oleh tim ahli yang berpengalaman.</p>
+            </div>
+            <div class="service-card">
+                <h3>Program Pelatihan dan Pengembangan SDM</h3>
+                <p>Pelatihan manajemen, leadership, dan pengembangan keterampilan bagi individu dan tim untuk mendukung keberlanjutan bisnis.</p>
+            </div>
+            <div class="service-card">
+                <h3>Inisiatif CSR dan Pemberdayaan Masyarakat</h3>
+                <p>Program tanggung jawab sosial perusahaan yang berfokus pada pemberdayaan masyarakat lokal, pelestarian lingkungan, dan pendidikan.</p>
+            </div>
+            <div class="service-card">
+                <h3>Kemitraan untuk UMKM dan Start-Up</h3>
+                <p>Dukungan strategis, pendanaan, dan konsultasi bagi pelaku usaha kecil dan start-up untuk mempercepat pertumbuhan mereka di pasar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title" data-description="Get in Touch">Kritik dan Saran</h2>
+        <form class="contact-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <label for="message">Your Message:</label>
+            <textarea id="message" rows="5" placeholder="Write your message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Company. - BRUNEI DARUSSALAM <a href="#home">Back to Top</a></p>
+    </footer>
+</body>
+</html>
